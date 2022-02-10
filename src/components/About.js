@@ -1,34 +1,60 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 
-export default function About() {
-    const [style,setStyle] = useState({
-        color:"black",
-        backgroundColor:"white",
-        
-       })
-    const [btnText, setbtnText] = useState("Enable Dark Mode");  
+export default function About(props) {
 
-    const toggleStyle = ()=> {
-        if(style.color ==="black"){
-            setStyle({
-                color:"white",
-                backgroundColor:"black",
-                border:"0.5px solid white"
-               });
-            setbtnText("Enable Light Mode");  
-        }
-        else{
-            setStyle({
-                color:"black",
-                backgroundColor:"white",
-                
-               });
-            setbtnText("Enable Dark Mode");  
-
-        }
-       
+    const white = {
+            color:"black",
+            backgroundColor:"white"
     }
+
+    const black = {
+        color:"white",
+        backgroundColor:"black"
+}
+    const [style,setStyle] = useState(white);
+
+    useEffect(() => {
+      if(props.mode==="dark"){
+          setStyle(black);
+      }
+      else{
+          setStyle(white);
+      }
+    }, [props.mode])
+    
+
+    // if(props.mode === "dark" ){
+    //   setStyle(black);
+    // }
+    // else{
+    //     setStyle(white);
+    // }
+  
+
+    // const toggleStyle = ()=> {
+    //     if(style.color ==="black"){
+    //         setStyle({
+    //             color:"white",
+    //             backgroundColor:"black",
+    //             border:"0.5px solid white"
+    //            });
+    //         setbtnText("Enable Light Mode");  
+    //     }
+    //     else{
+    //         setStyle({
+    //             color:"black",
+    //             backgroundColor:"white",
+                
+    //            });
+    //         setbtnText("Enable Dark Mode");  
+
+    //     }
+       
+    // }
+    console.log(style);
+    console.log(props.mode);
   return (
+      
     <div className="container">
      <div class="accordion" id="accordionExample" style={style} >
   <div class="accordion-item" style={style} >
@@ -68,7 +94,7 @@ export default function About() {
     </div>
   </div>
 </div>
- <button className="btn btn-primary mx-2 my-2 " onClick={toggleStyle}  >{btnText}</button>
+ 
     </div>
   );
 }

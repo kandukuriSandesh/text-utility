@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
 function App() {
 
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("white");
 
   const toggleMode = () => {
     if(mode === "dark"){
@@ -27,7 +27,7 @@ function App() {
     <Navbar name ="TextUtility" mode={mode} toggleMode={toggleMode}  > TextUtility</Navbar>
     <div className="container">
     <TextForm mode={mode} ></TextForm>
-    {/* <About/> */}
+    <About mode = {mode} />
     </div>
     
   </>
