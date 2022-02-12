@@ -45,10 +45,10 @@ export default function TextForm(props) {
            <h2>Enter your Text Here</h2>
             <textarea className="form-control" value={text} onChange={onChangeHandler} style ={{backgroundColor:props.mode ==="dark"?"#bfbfbf":"white",color:props.mode ==="dark"?"#3d3d3d":"black"}}  id="exampleFormControlTextarea1" rows="10"></textarea>
         </div>
-        <button className="btn btn-dark mx-1" onClick={onClickUpHandler} disabled = {text?false:true}  >Click for UpperCase</button>
-        <button className="btn btn-dark mx-1 " onClick={onClickLoHandler}  disabled = {text?false:true} >Click for UpperCase</button>
-        <button className="btn btn-dark mx-1 " onClick={onClickClearHandler}  disabled = {text?false:true} >Clear Text</button>
-        <button className="btn btn-dark mx-1 " onClick={handleCopy}  disabled = {text?false:true} >Copy Text</button>
+        <button className="btn btn-dark mx-1 mb-2" onClick={onClickUpHandler} disabled = {text?false:true}  >Click for UpperCase</button>
+        <button className="btn btn-dark mx-1 mb-2 " onClick={onClickLoHandler}  disabled = {text?false:true} >Click for UpperCase</button>
+        <button className="btn btn-dark mx-1 mb-2 " onClick={onClickClearHandler}  disabled = {text?false:true} >Clear Text</button>
+        <button className="btn btn-dark mx-1 mb-2" onClick={handleCopy}  disabled = {text?false:true} >Copy Text</button>
        
     </div>
      <div className="container my-2">
