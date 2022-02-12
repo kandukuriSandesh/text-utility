@@ -33,7 +33,7 @@ export default function TextForm(props) {
         text.select();
         navigator.clipboard.writeText(text.value);
         document.getSelection().removeAllRanges();
-        props.showAlert("Text has benn copied..!","success");
+        props.showAlert("Text has been copied..!","success");
     }
 
   //  {`${text} ?disabled:false `}
@@ -47,8 +47,8 @@ export default function TextForm(props) {
         </div>
         <button className="btn btn-dark mx-1" onClick={onClickUpHandler} disabled = {text?false:true}  >Click for UpperCase</button>
         <button className="btn btn-dark mx-1 " onClick={onClickLoHandler}  disabled = {text?false:true} >Click for UpperCase</button>
-        <button className="btn btn-dark mx-1 " onClick={onClickClearHandler}  disabled = {text?false:true} >Clear</button>
-        <button className="btn btn-dark mx-1 " onClick={handleCopy}  disabled = {text?false:true} >Copy</button>
+        <button className="btn btn-dark mx-1 " onClick={onClickClearHandler}  disabled = {text?false:true} >Clear Text</button>
+        <button className="btn btn-dark mx-1 " onClick={handleCopy}  disabled = {text?false:true} >Copy Text</button>
        
     </div>
      <div className="container my-2">
